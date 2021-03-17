@@ -84,6 +84,7 @@ public class MenuHandler implements MouseListener, ActionListener {
             gui.dispose();
         }
         if (action == 1) {
+            Pong.getInstance().unloadPlugins();
             System.exit(0);
         }
     }

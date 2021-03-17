@@ -38,12 +38,12 @@ public class PluginManager implements PongPluginManager {
 
     public void loadPlugin(final File file) {
         try {
-            final JarFile jarFile = new JarFile("Plugin.jar");
+            final JarFile jarFile = new JarFile(file);
             final Manifest manifest = jarFile.getManifest();
             final Attributes attributes = manifest.getMainAttributes();
             final String main = attributes.getValue(Attributes.Name.MAIN_CLASS);
 
-            final Class cl = new URLClassLoader(new URL[]{new File("Plugin.jar").toURL()}).loadClass(main);
+            final Class cl = new URLClassLoader(new URL[]{file.toURL()}).loadClass(main);
             final Class[] interfaces = cl.getInterfaces();
 
             boolean isPlugin = false;

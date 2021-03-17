@@ -1,6 +1,7 @@
 package de.jonas;
 
 import de.jonas.menu.Menu;
+import de.jonas.plugins.PluginManager;
 import de.jonas.pong.Ball;
 import de.jonas.pong.BallHandler;
 import de.jonas.pong.Bot;
@@ -54,8 +55,10 @@ public final class Pong {
      * @param args .
      */
     public static void main(String[] args) {
-        new Pong().loadFont();
+        final Pong pong = new Pong();
+        pong.loadFont();
         new Menu();
+        pong.loadPlugins();
     }
     //</editor-fold>
 
@@ -96,6 +99,14 @@ public final class Pong {
         } catch (FontFormatException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Lädt alle Plugins in dem 'plugins' Ordner, der sich in demselben Verzeichnis wie die Anwendung befindet.
+     */
+    private void loadPlugins() {
+        final PluginManager manager = new PluginManager();
+        manager.start();
     }
 
     /**

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PongIntellij:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PongIntellij_jar</output-path>
+    <root id="archive" name="PongIntellij.jar">
+      <element id="module-output" name="PongIntellij" />
+    </root>
+  </artifact>
+</component>

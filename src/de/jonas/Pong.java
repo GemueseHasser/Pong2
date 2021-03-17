@@ -24,7 +24,7 @@ public final class Pong {
     /** Die Höhe, des hauptsächlichen Spiels. */
     public static final int FRAME_HEIGHT = 450;
     /** Der {@link PluginManager}, der das Aktivieren und Deaktivieren von Plugins regelt. */
-    private static final PluginManager manager = new PluginManager();
+    private static final PluginManager MANAGER = new PluginManager();
     //</editor-fold>
 
 
@@ -107,14 +107,14 @@ public final class Pong {
      * Lädt alle Plugins in dem 'plugins' Ordner, der sich in demselben Verzeichnis wie die Anwendung befindet.
      */
     private void loadPlugins() {
-        manager.start();
+        MANAGER.start();
     }
 
     /**
      * Stoppt alle Plugins, die beim Start aktiviert bzw geladen wurden.
      */
     public void unloadPlugins() {
-        manager.stop();
+        MANAGER.stop();
     }
 
     /**

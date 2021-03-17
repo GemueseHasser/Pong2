@@ -1,7 +1,5 @@
 package de.jonas.plugins;
 
-import javax.swing.JOptionPane;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -12,7 +10,7 @@ import java.util.jar.Attributes;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
-public class PluginManager implements PongPluginManager {
+public class PluginManager {
 
     private static final List<PongPlugin> loadedPlugins = new ArrayList<>();
 
@@ -60,10 +58,5 @@ public class PluginManager implements PongPluginManager {
         } catch (IOException | ClassNotFoundException | IllegalAccessException | InstantiationException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void openWindow(final String msg) {
-        JOptionPane.showMessageDialog(null, msg);
     }
 }

@@ -6,6 +6,4 @@ public interface PongPlugin {
 
     boolean stop();
 
-    void setPluginManager(final PongPluginManager manager);
-
 }
